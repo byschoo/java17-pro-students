@@ -1,0 +1,27 @@
+services:
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    container_name: my-postgres-container
+    env_file:
+      - path: ./src/main/resources/secrets.properties
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - '5433:5432'
+
+  pgadmin4:
+    image: dpage/pgadmin4:latest
+    restart: always
+    container_name: my-pgadmin4-container
+    env_file:
+      - path: ./src/main/resources/secrets.properties
+    ports:
+      - "8090:8080"
+    volumes:
+      - servers.json:/pgadmin4/servers.json
+
+volumes:
+  pgdata:
+  servers.json:
