@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.byschoo.apirest_students.Entity.Student;
 import com.byschoo.apirest_students.Service.StudentService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api")
 public class StudentController {
@@ -23,12 +25,12 @@ public class StudentController {
     private StudentService studentService;
 
     @PostMapping("/addStudent")
-    public Student addStudent(@RequestBody Student student) {
+    public Student addStudent(@RequestBody @Valid Student student) {
     return studentService.saveStudent(student);
     }
 
     @PostMapping("/addStudents")
-    public List<Student> addStudents(@RequestBody List<Student> students) {
+    public List<Student> addStudents(@RequestBody @Valid List<Student> students) {
     return studentService.saveStudents(students);
     }
 
@@ -48,12 +50,12 @@ public class StudentController {
     }
 
     @PutMapping("/update")
-    public Student updateStudent(@RequestBody Student student) {
+    public Student updateStudent(@RequestBody @Valid Student student) {
     return studentService.updateStudent(student);
     }
     
     @PutMapping("/update/{id}")
-    public Student updateStudentById(@PathVariable Long id, @RequestBody Student student) {
+    public Student updateStudentById(@PathVariable Long id, @RequestBody @Valid Student student) {
     return studentService.updateStudentById(id, student);
     }
 
