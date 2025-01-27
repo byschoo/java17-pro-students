@@ -51,7 +51,7 @@ public class StudentController {
     }
 
     @PutMapping("/update")
-    public Student updateStudent(@Valid @RequestBody Student student) {
+    public Student updateStudent(@RequestBody Student student) {
     return studentService.updateStudent(student);
     }
     
