@@ -9,9 +9,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 /*import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;*/
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
+/*import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;*/
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,7 +26,7 @@ public class Student {
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-  // @NotNull
+   @NotNull
    private Long id;
 
    @Column(name = "name", nullable = false)
@@ -36,8 +36,8 @@ public class Student {
    private String name;
 
    @Column(name = "age", nullable = false)
-   /*@NotNull(message = "La edad es obligatoria y debe ser mayor de edad")
-   @Min(value = 18, message = "La edad debe ser mayor o igual a 18")
+   @NotNull(message = "La edad es obligatoria y debe ser mayor de edad")
+   /*@Min(value = 18, message = "La edad debe ser mayor o igual a 18")
    @Max(value = 125, message = "La edad no puede ser mayor a 125") */
    private int age;
 }
