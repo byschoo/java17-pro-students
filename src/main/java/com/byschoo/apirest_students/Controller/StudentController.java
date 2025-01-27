@@ -25,12 +25,12 @@ public class StudentController {
     private StudentService studentService;
 
     @PostMapping("/addStudent")
-    public Student addStudent(@RequestBody @Valid Student student) {
+    public Student addStudent(@Valid @RequestBody Student student) {
     return studentService.saveStudent(student);
     }
 
     @PostMapping("/addStudents")
-    public List<Student> addStudents(@RequestBody @Valid List<Student> students) {
+    public List<Student> addStudents(@Valid @RequestBody List<Student> students) {
     return studentService.saveStudents(students);
     }
 
