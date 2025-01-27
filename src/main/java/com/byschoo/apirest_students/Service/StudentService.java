@@ -30,7 +30,7 @@ public class StudentService {
         return studentRepository.findById(id).orElseThrow( () -> new RuntimeException("The student with the " + id + " was not found"));
    }
 
-   public Student getStudentByName(String name) {
+   public List<Student> getStudentByName(String name) {
         return studentRepository.findByName(name);
    }
 
