@@ -11,5 +11,5 @@ import com.byschoo.apirest_students.Entity.Student;
 public interface IStudentRepository extends JpaRepository<Student, Long> {
     //Student findByName(@Param("name") String name);
     @Query("select u from Student u where u.name = ?1")
-    List<Student> findByNameStartsWith(String name);
+    List<Student> findByNameStudents(String name);
 }
