@@ -19,11 +19,11 @@ public class StudentService {
    }
 
    public List<Student> saveStudents(List<Student> students) {
-        return studentRepository.saveAll(students);
+        return (List<Student>) studentRepository.saveAll(students);
    }
 
    public List<Student> getStudents() {
-        return studentRepository.findAll();
+        return (List<Student>) studentRepository.findAll();
    }
 
    public Student getStudentById(Long id) {
@@ -31,7 +31,7 @@ public class StudentService {
    }
 
    public List<Student> getStudentByName(String name) {
-        return studentRepository.findByNameStudents(name);
+        return (List<Student>) studentRepository.findByStudentName(name);
    }
 
    public String deleteStudent(Long id) {
