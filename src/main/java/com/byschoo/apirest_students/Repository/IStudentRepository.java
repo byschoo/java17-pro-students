@@ -8,5 +8,5 @@ import com.byschoo.apirest_students.Entity.Student;
 
 
 public interface IStudentRepository extends JpaRepository<Student, Long> {
-   List<Student> findByStudentName(String name);
+   List<Student> findByName(String name);
 }
