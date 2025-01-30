@@ -19,7 +19,7 @@ public class StudentService {
    }
 
    public List<Student> saveStudents(List<Student> students) {
-        return studentRepository.saveAll(students);
+        return (List<Student>) studentRepository.saveAll(students);
    }
 
    public List<Student> getStudents() {
