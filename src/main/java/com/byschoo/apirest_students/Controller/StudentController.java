@@ -31,7 +31,7 @@ public class StudentController {
     }
 
     @PostMapping("/addStudents")
-    public List<Student> addStudents(@RequestBody List<Student> students) {
+    public List<Student> addStudents(@Valid @RequestBody List<Student> students) {
     return studentService.saveStudents(students);
     }
 
