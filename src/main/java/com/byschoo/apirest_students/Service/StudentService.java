@@ -31,7 +31,7 @@ public class StudentService {
    }
 
    public List<Student> getStudentByName(String name) {
-        return (List<Student>) studentRepository.findByName(name);
+        return (List<Student>) studentRepository.findByNameLike(name);
    }
 
    public String deleteStudent(Long id) {
